@@ -1,0 +1,1145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Eddy Ndyanabo - Next-Generation Computer Scientist solving real-world problems with AI, automation, and innovative tech solutions.">
+    <meta name="keywords" content="Software Developer, AI Expert, Computer Scientist, Innovation, Rwanda, Uganda, Python, JavaScript, React, Machine Learning">
+    <meta name="author" content="Eddy Ndyanabo">
+    
+    <title>Eddy Ndyanabo - Next-Generation Computer Scientist</title>
+    
+    <style>
+        :root {
+            --primary: #667eea;
+            --secondary: #764ba2;
+            --accent: #f093fb;
+            --success: #48bb78;
+            --dark: #1a202c;
+            --gray: #4a5568;
+            --light-gray: #e2e8f0;
+            --white: #ffffff;
+            --shadow-sm: 0 2px 10px rgba(0, 0, 0, 0.1);
+            --shadow-md: 0 5px 20px rgba(0, 0, 0, 0.15);
+            --shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.2);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-image: url('background.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            min-height: 100vh;
+        }
+
+        /* Add overlay to make text more readable */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.3);
+            z-index: -1;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Navigation */
+        nav {
+            background: rgba(0, 128, 0, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow-md);
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 18px;
+            transition: var(--transition);
+            position: relative;
+            padding: 10px 15px;
+            border-radius: 8px;
+        }
+
+        .nav-links a:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .nav-links a:focus {
+            outline: 2px solid white;
+            outline-offset: 4px;
+        }
+
+        /* Mobile Menu Button */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 28px;
+            cursor: pointer;
+            color: white;
+            padding: 5px 10px;
+        }
+
+        /* Hero Section */
+        header {
+            background: rgba(255, 255, 255, 0.98);
+            padding: 80px 40px;
+            text-align: center;
+            border-radius: 30px;
+            margin: 40px auto;
+            max-width: 1000px;
+            box-shadow: var(--shadow-lg);
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary), var(--accent));
+        }
+
+        .profile-img {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            border: 6px solid var(--primary);
+            margin: 0 auto 30px;
+            display: block;
+            object-fit: cover;
+            box-shadow: var(--shadow-md);
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        h1 {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-size: 3.5em;
+            margin-bottom: 15px;
+            font-weight: 800;
+        }
+
+        .tagline {
+            color: var(--gray);
+            font-size: 1.6em;
+            margin-bottom: 20px;
+            font-weight: 400;
+        }
+
+        .mission-statement {
+            background: linear-gradient(135deg, #f0f4ff, #e8eeff);
+            padding: 30px;
+            border-radius: 20px;
+            margin: 30px auto;
+            max-width: 800px;
+            border-left: 6px solid var(--primary);
+            font-size: 1.2em;
+            color: var(--dark);
+            font-style: italic;
+            font-weight: 500;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 30px 0;
+        }
+
+        .btn {
+            padding: 16px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            font-size: 1.1em;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .btn:focus {
+            outline: 3px solid var(--primary);
+            outline-offset: 3px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: linear-gradient(135deg, #f0f4ff, #e8eeff);
+            padding: 14px 28px;
+            border-radius: 30px;
+            font-size: 1em;
+            color: var(--dark);
+            transition: var(--transition);
+            font-weight: 600;
+        }
+
+        .contact-item:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-sm);
+        }
+
+        /* Section Styling */
+        section {
+            margin: 80px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-size: 3em;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 15px;
+            font-weight: 800;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .section-header p {
+            color: white;
+            font-size: 1.3em;
+            max-width: 800px;
+            margin: 0 auto;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            font-weight: 500;
+        }
+
+        /* Capabilities Grid */
+        .capabilities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 35px;
+            margin-bottom: 40px;
+        }
+
+        .capability-card {
+            background: rgba(255, 255, 255, 0.98);
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+        }
+
+        .capability-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .capability-header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 35px;
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .capability-icon {
+            font-size: 4em;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .capability-title h3 {
+            font-size: 1.7em;
+            margin-bottom: 8px;
+        }
+
+        .capability-title p {
+            font-size: 1em;
+            opacity: 0.95;
+        }
+
+        .capability-content {
+            padding: 35px;
+        }
+
+        .capability-content ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .capability-content li {
+            padding: 14px 0;
+            padding-left: 35px;
+            position: relative;
+            color: var(--gray);
+            font-size: 1.1em;
+        }
+
+        .capability-content li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--success);
+            font-weight: bold;
+            font-size: 1.4em;
+        }
+
+        .capability-example {
+            background: linear-gradient(135deg, #f0f4ff, #e8eeff);
+            padding: 25px;
+            border-radius: 15px;
+            margin-top: 25px;
+            font-style: italic;
+            color: var(--dark);
+            border-left: 5px solid var(--primary);
+            line-height: 1.7;
+        }
+
+        .capability-example strong {
+            color: var(--primary);
+            font-style: normal;
+        }
+
+        /* Projects Grid */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 35px;
+            margin-bottom: 40px;
+        }
+
+        .project-card {
+            background: rgba(255, 255, 255, 0.98);
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .project-image {
+            width: 100%;
+            height: 240px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5em;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-image::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, transparent 70%);
+            animation: shimmer 3s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .project-content {
+            padding: 35px;
+        }
+
+        .project-content h3 {
+            font-size: 1.8em;
+            margin-bottom: 18px;
+            color: var(--dark);
+        }
+
+        .project-content p {
+            color: var(--gray);
+            margin-bottom: 25px;
+            line-height: 1.8;
+            font-size: 1.05em;
+        }
+
+        .impact-badge {
+            background: linear-gradient(135deg, var(--success), #38a169);
+            color: white;
+            padding: 10px 24px;
+            border-radius: 25px;
+            font-size: 0.95em;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 18px;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 25px;
+        }
+
+        .tech-tag {
+            background: linear-gradient(135deg, #f0f4ff, #e8eeff);
+            color: var(--primary);
+            padding: 8px 18px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: 700;
+        }
+
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 35px;
+        }
+
+        .service-card {
+            background: rgba(255, 255, 255, 0.98);
+            padding: 40px;
+            border-radius: 25px;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            transform: scaleX(0);
+            transition: transform 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-icon {
+            font-size: 4em;
+            margin-bottom: 25px;
+            display: block;
+        }
+
+        .service-card h3 {
+            color: var(--dark);
+            margin-bottom: 25px;
+            font-size: 1.6em;
+            font-weight: 700;
+        }
+
+        .service-card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .service-card li {
+            padding: 12px 0;
+            padding-left: 30px;
+            position: relative;
+            color: var(--gray);
+            font-size: 1.05em;
+        }
+
+        .service-card li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: bold;
+            font-size: 1.3em;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 60px 20px;
+            color: white;
+            margin-top: 80px;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 25px;
+            backdrop-filter: blur(10px);
+        }
+
+        footer h2 {
+            margin-bottom: 25px;
+            font-size: 2.2em;
+        }
+
+        footer p {
+            margin: 12px 0;
+            font-size: 1.15em;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin: 35px 0;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 2.2em;
+            transition: var(--transition);
+            text-decoration: none;
+            width: 70px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 50%;
+        }
+
+        .social-links a:hover {
+            transform: scale(1.2) rotate(5deg);
+            background: rgba(255, 255, 255, 0.25);
+        }
+
+        /* Scroll to top button */
+        #scrollTop {
+            position: fixed;
+            bottom: 35px;
+            right: 35px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+            z-index: 999;
+            border: none;
+            font-size: 1.8em;
+        }
+
+        #scrollTop:hover {
+            transform: translateY(-5px) scale(1.1);
+        }
+
+        #scrollTop.show {
+            display: flex;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5em;
+            }
+
+            .section-header h2 {
+                font-size: 2.2em;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 60px;
+                left: 0;
+                right: 0;
+                background: rgba(0, 128, 0, 0.98);
+                flex-direction: column;
+                padding: 25px;
+                box-shadow: var(--shadow-md);
+                transform: translateY(-100%);
+                opacity: 0;
+                transition: var(--transition);
+                gap: 15px;
+            }
+
+            .nav-links.active {
+                transform: translateY(0);
+                opacity: 1;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            header {
+                padding: 60px 25px;
+            }
+
+            .profile-img {
+                width: 200px;
+                height: 200px;
+            }
+
+            .capabilities-grid,
+            .services-grid,
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            .tagline {
+                font-size: 1.2em;
+            }
+
+            .profile-img {
+                width: 160px;
+                height: 160px;
+            }
+
+            .capability-header,
+            .project-content,
+            .service-card {
+                padding: 25px;
+            }
+
+            .section-header h2 {
+                font-size: 1.8em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <button class="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false">
+                ☰
+            </button>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#capabilities">Capabilities</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#services">Services</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <header id="home">
+            <img src="eddy.jpeg" alt="Eddy Ndyanabo" class="profile-img">
+            <h1>EDDY NDYANABO</h1>
+            <p class="tagline">Next-Generation Computer Scientist</p>
+            
+            <div class="mission-statement">
+                "A problem-solver, builder, leader, teacher, and moral compass — not just a genius."
+            </div>
+
+            <div class="cta-buttons">
+                <a href="mailto:ndyanaboeddy512@gmail.com" class="btn btn-primary">
+                    <span>📧</span> Let's Collaborate
+                </a>
+                <a href="#portfolio" class="btn btn-secondary">
+                    <span>💼</span> See My Impact
+                </a>
+            </div>
+
+            <div class="contact-info">
+                <div class="contact-item">
+                    <span>📞</span> +256788398330
+                </div>
+                <div class="contact-item">
+                    <span>📞</span> +250729974065
+                </div>
+                <div class="contact-item">
+                    <span>📧</span> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="fa949e839b949b98959f9e9e83cfcbc8ba9d979b9396d4999597">[email&#160;protected]</a>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <!-- Capabilities Section -->
+            <section id="capabilities">
+                <div class="section-header">
+                    <h2>What I Bring to the Table</h2>
+                    <p>The capabilities of a 21st-century computer scientist solving real-world problems</p>
+                </div>
+
+                <div class="capabilities-grid">
+                    <div class="capability-card">
+                        <div class="capability-header">
+                            <div class="capability-icon">🌍</div>
+                            <div class="capability-title">
+                                <h3>Real-World Impact</h3>
+                                <p>Theory → Prototype → Product</p>
+                            </div>
+                        </div>
+                        <div class="capability-content">
+                            <ul>
+                                <li>Solve problems in jobs, health, climate, security, education</li>
+                                <li>Build solutions people actually use</li>
+                                <li>Rapid prototyping and deployment</li>
+                                <li>User-centered design thinking</li>
+                            </ul>
+                            <div class="capability-example">
+                                <strong>Real Example:</strong> Not "AI for agriculture" papers, but mobile apps farmers actually use in the field to maximize yields and reduce waste.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="capability-card">
+                        <div class="capability-header">
+                            <div class="capability-icon">🤖</div>
+                            <div class="capability-title">
+                                <h3>AI & Automation Mastery</h3>
+                                <p>Build it. Control it. Keep it human.</p>
+                            </div>
+                        </div>
+                        <div class="capability-content">
+                            <ul>
+                                <li>Develop advanced AI systems</li>
+                                <li>Automate complex workflows</li>
+                                <li>Boost productivity exponentially</li>
+                                <li>Ensure AI is safe, fair, and explainable</li>
+                            </ul>
+                            <div class="capability-example">
+                                <strong>The Question I Answer:</strong> "How do we use AI without losing our humanity?" Through ethical design, transparency, and putting human values first.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="capability-card">
+                        <div class="capability-header">
+                            <div class="capability-icon">🌉</div>
+                            <div class="capability-title">
+                                <h3>Tech-Society Bridge</h3>
+                                <p>Leader, not just coder</p>
+                            </div>
+                        </div>
+                        <div class="capability-content">
+                            <ul>
+                                <li>Explain complex tech in simple language</li>
+                                <li>Advise governments and communities</li>
+                                <li>Shape digital policies & ethics</li>
+                                <li>Balance innovation with social values</li>
+                            </ul>
+                            <div class="capability-example">
+                                <strong>My Role:</strong> Not isolated in labs—I'm a bridge between cutting-edge technology and the communities it serves.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="capability-card">
+                        <div class="capability-header">
+                            <div class="capability-icon">📈</div>
+                            <div class="capability-title">
+                                <h3>Scale Solutions</h3>
+                                <p>Millions, not hundreds</p>
+                            </div>
+                        </div>
+                        <div class="capability-content">
+                            <ul>
+                                <li>Systems that scale to millions of users</li>
+                                <li>Work in low-resource environments (crucial for Africa)</li>
+                                <li>Reliable, secure, and affordable</li>
+                                <li>Offline-first and low-bandwidth solutions</li>
+                            </ul>
+                            <div class="capability-example">
+                                <strong>African Context:</strong> Building apps that work with 2G networks, offline capabilities, and minimal data consumption—because everyone deserves access.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="capability-card">
+                        <div class="capability-header">
+                            <div class="capability-icon">🧑‍💻</div>
+                            <div class="capability-title">
+                                <h3>Job Creation</h3>
+                                <p>Lift others, don't dominate</p>
+                            </div>
+                        </div>
+                        <div class="capability-content">
+                            <ul>
+                                <li>Build tech that creates opportunities</li>
+                                <li>Support startups & innovation ecosystems</li>
+                                <li>Mentor young developers</li>
+                                <li>Democratize technical knowledge</li>
+                            </ul>
+                            <div class="capability-example">
+                                <strong>My Commitment:</strong> Every project I build aims to empower others—through training, open collaboration, and creating pathways for the next generation.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="capability-card">
+                        <div class="capability-header">
+                            <div class="capability-icon">⚡</div>
+                            <div class="capability-title">
+                                <h3>Innovation Speed</h3>
+                                <p>Fast iteration, real results</p>
+                            </div>
+                        </div>
+                        <div class="capability-content">
+                            <ul>
+                                <li>Rapid development cycles</li>
+                                <li>Agile methodology expert</li>
+                                <li>Quick problem diagnosis and solutions</li>
+                                <li>Continuous learning and adaptation</li>
+                            </ul>
+                            <div class="capability-example">
+                                <strong>Approach:</strong> Move fast, fail fast, learn faster. Building working prototypes in days, not months.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Portfolio Section -->
+            <section id="portfolio">
+                <div class="section-header">
+                    <h2>Portfolio & Impact</h2>
+                    <p>Real projects solving real problems for real people</p>
+                </div>
+
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-image">🌾</div>
+                        <div class="project-content">
+                            <div class="impact-badge">10,000+ Farmers Helped</div>
+                            <h3>Smart Agriculture Platform</h3>
+                            <p>Mobile-first solution helping farmers optimize crop yields using AI-powered weather predictions and soil analysis. Works offline and on 2G networks.</p>
+                            <div class="tech-stack">
+                                <span class="tech-tag">React Native</span>
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">TensorFlow</span>
+                                <span class="tech-tag">Firebase</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-image">🏥</div>
+                        <div class="project-content">
+                            <div class="impact-badge">Healthcare Access</div>
+                            <h3>Medical Records System</h3>
+                            <p>Secure, scalable platform for digitizing patient records in rural clinics. Enables better healthcare delivery with real-time data access.</p>
+                            <div class="tech-stack">
+                                <span class="tech-tag">Node.js</span>
+                                <span class="tech-tag">MongoDB</span>
+                                <span class="tech-tag">React</span>
+                                <span class="tech-tag">Blockchain</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-image">📚</div>
+                        <div class="project-content">
+                            <div class="impact-badge">Education Innovation</div>
+                            <h3>E-Learning Platform</h3>
+                            <p>Interactive learning platform bringing quality education to underserved communities. Features offline content sync and adaptive learning paths.</p>
+                            <div class="tech-stack">
+                                <span class="tech-tag">Vue.js</span>
+                                <span class="tech-tag">Django</span>
+                                <span class="tech-tag">PostgreSQL</span>
+                                <span class="tech-tag">AI/ML</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-image">💼</div>
+                        <div class="project-content">
+                            <div class="impact-badge">Economic Impact</div>
+                            <h3>SME Management Suite</h3>
+                            <p>Comprehensive business management tools for small and medium enterprises. Inventory, accounting, and customer management in one platform.</p>
+                            <div class="tech-stack">
+                                <span class="tech-tag">Flutter</span>
+                                <span class="tech-tag">Firebase</span>
+                                <span class="tech-tag">Cloud Functions</span>
+                                <span class="tech-tag">Analytics</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-image">🚀</div>
+                        <div class="project-content">
+                            <div class="impact-badge">Startup Accelerator</div>
+                            <h3>Innovation Hub Platform</h3>
+                            <p>Digital ecosystem connecting entrepreneurs, mentors, and investors. Facilitating collaboration and funding opportunities across Africa.</p>
+                            <div class="tech-stack">
+                                <span class="tech-tag">Next.js</span>
+                                <span class="tech-tag">GraphQL</span>
+                                <span class="tech-tag">AWS</span>
+                                <span class="tech-tag">Stripe</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-image">🌐</div>
+                        <div class="project-content">
+                            <div class="impact-badge">Community Driven</div>
+                            <h3>Open Source Contributions</h3>
+                            <p>Active contributor to major open-source projects. Building tools and libraries that developers worldwide use daily.</p>
+                            <div class="tech-stack">
+                                <span class="tech-tag">GitHub</span>
+                                <span class="tech-tag">TypeScript</span>
+                                <span class="tech-tag">Docker</span>
+                                <span class="tech-tag">CI/CD</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Services Section -->
+            <section id="services">
+                <div class="section-header">
+                    <h2>Services I Offer</h2>
+                    <p>Comprehensive solutions tailored to your needs</p>
+                </div>
+
+                <div class="services-grid">
+                    <div class="service-card">
+                        <span class="service-icon">💻</span>
+                        <h3>Custom Software Development</h3>
+                        <ul>
+                            <li>Web & Mobile Applications</li>
+                            <li>Enterprise Solutions</li>
+                            <li>API Development & Integration</li>
+                            <li>Cloud-Native Architecture</li>
+                            <li>Microservices Design</li>
+                        </ul>
+                    </div>
+
+                    <div class="service-card">
+                        <span class="service-icon">🤖</span>
+                        <h3>AI & Machine Learning</h3>
+                        <ul>
+                            <li>Predictive Analytics</li>
+                            <li>Natural Language Processing</li>
+                            <li>Computer Vision Solutions</li>
+                            <li>Recommendation Systems</li>
+                            <li>AI Model Training & Deployment</li>
+                        </ul>
+                    </div>
+
+                    <div class="service-card">
+                        <span class="service-icon">🎯</span>
+                        <h3>Technical Consulting</h3>
+                        <ul>
+                            <li>Technology Strategy</li>
+                            <li>System Architecture Review</li>
+                            <li>Digital Transformation</li>
+                            <li>Tech Stack Selection</li>
+                            <li>Performance Optimization</li>
+                        </ul>
+                    </div>
+
+                    <div class="service-card">
+                        <span class="service-icon">📊</span>
+                        <h3>Data Solutions</h3>
+                        <ul>
+                            <li>Database Design & Optimization</li>
+                            <li>Data Pipeline Development</li>
+                            <li>Business Intelligence</li>
+                            <li>Data Visualization</li>
+                            <li>Analytics Implementation</li>
+                        </ul>
+                    </div>
+
+                    <div class="service-card">
+                        <span class="service-icon">🎓</span>
+                        <h3>Training & Mentorship</h3>
+                        <ul>
+                            <li>Developer Training Programs</li>
+                            <li>Code Reviews & Best Practices</li>
+                            <li>Team Capacity Building</li>
+                            <li>Workshop Facilitation</li>
+                            <li>Career Guidance</li>
+                        </ul>
+                    </div>
+
+                    <div class="service-card">
+                        <span class="service-icon">🔒</span>
+                        <h3>Security & DevOps</h3>
+                        <ul>
+                            <li>Security Audits</li>
+                            <li>CI/CD Pipeline Setup</li>
+                            <li>Infrastructure as Code</li>
+                            <li>Monitoring & Logging</li>
+                            <li>Disaster Recovery Planning</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <h2>Eddy Ndyanabo</h2>
+            <p>Next-Generation Computer Scientist</p>
+            <p>Building the Future of Technology in Africa</p>
+            
+            <div class="social-links">
+                <a href="https://github.com/eddyndyanabo" target="_blank" rel="noopener" aria-label="GitHub">💻</a>
+                <a href="https://linkedin.com/in/eddyndyanabo" target="_blank" rel="noopener" aria-label="LinkedIn">💼</a>
+                <a href="https://twitter.com/eddyndyanabo" target="_blank" rel="noopener" aria-label="Twitter">🐦</a>
+                <a href="/cdn-cgi/l/email-protection#6a040e130b040b08050f0e0e135f5b582a0d070b030644090507" aria-label="Email">📧</a>
+            </div>
+            
+            <p>&copy; 2026 Eddy Ndyanabo. No pain No Gain</p>
+        </footer>
+    </div>
+
+    <button id="scrollTop" aria-label="Scroll to top">↑</button>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            const isExpanded = navLinks.classList.contains('active');
+            mobileMenuBtn.setAttribute('aria-expanded', isExpanded);
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                mobileMenuBtn.setAttribute('aria-expanded', 'false');
+            });
+        });
+
+        // Scroll to top button
+        const scrollTopBtn = document.getElementById('scrollTop');
+
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                scrollTopBtn.classList.add('show');
+            } else {
+                scrollTopBtn.classList.remove('show');
+            }
+        });
+
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Smooth scroll for all anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(t
